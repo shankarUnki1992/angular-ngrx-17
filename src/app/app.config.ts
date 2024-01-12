@@ -5,9 +5,10 @@ import { routes } from './app.routes';
 import { StoreModule, provideStore } from '@ngrx/store';
 import { counterReducer } from './store/counter.reducer';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideStore(), importProvidersFrom(StoreModule, StoreModule.forRoot({
-    count: counterReducer
-  })), provideStoreDevtools({ maxAge: 25, logOnly: true })]
+        count: counterReducer
+    })), provideStoreDevtools({ maxAge: 25, logOnly: true }), provideAnimations()]
 };

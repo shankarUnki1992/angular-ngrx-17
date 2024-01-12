@@ -1,9 +1,32 @@
-<button type="button" (click)="onIncrement()">Increment</button>
-<button type="button" (click)="onDecrement()">Decrement</button>
-<button type="button" (click)="onReset()">Reset</button>
+<div class="example-button-row">
+  <div class="col-12">
+    <button mat-raised-button color="primary" (click)="onIncrement()">Increment</button>
+    <button mat-raised-button color="accent" (click)="onDecrement()">Decrement</button>
+    <button mat-raised-button color="warn" (click)="onReset()">Reset</button>
+  </div>
+</div>
+
+<div class="row">
+  <mat-form-field class="example-full-width">
+    <mat-label>Favorite food</mat-label>
+    <input type="number" matInput placeholder="Ex. Pizza" value="0" [(ngModel)]="counterDisplay">
+  </mat-form-field>
+</div>
+
+<div class="row">
+  <mat-form-field>
+    <mat-label>Maths</mat-label>
+    <mat-select [(ngModel)]="valueType">
+      @for (cal of cals; track cal) {
+      <mat-option [value]="cal.value">{{cal.value}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+</div>
 
 
-<input type="number" name="" id="" [(ngModel)]="counterDisplay">
-<button type="button" (click)="customIncreament()">Click</button>
+<button mat-raised-button color="primary" (click)="customIncreament()">Sublit</button>
+
 
 <app-counterdisplay />

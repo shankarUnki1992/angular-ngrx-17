@@ -22,9 +22,10 @@ const _counterReducer = createReducer(initialState,
     }
   }),
   on(customIncreament, (state, action) => {
+    console.log({ ...state }, { ...action });
     return {
       ...state,
-      count: state.count + action.value
+      count: action.valueType == 'add' ? state.count + action.value : state.count - action.value
     }
   })
 )
